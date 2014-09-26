@@ -1,0 +1,22 @@
+{
+  "name": "templesmc-study-away",
+  "version": "1.0.0",
+  "homepage": "http://smc.temple.edu/study-away",
+  "authors": [
+    "Todd Broadbent <loafintree@gmail.com>",
+    "Chris Montgomery <chris@montchr.io>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "assets/vendor"
+  ],
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "jquery": "1.11.1",
+    "bootstrap": "3.2.0",
+    "respond": "1.4.2"
+  }
+}
