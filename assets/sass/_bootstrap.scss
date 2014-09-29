@@ -5,6 +5,7 @@
 // --------------------------------------------------
 
 // Variables
+@import "_bootswatch-variables"; // Bootswatch Cerulean 3.2.0 http://bootswatch.com/cerulean/
 @import "_variables"; // Bootstrap variable overrides and custom variables
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables";
 
@@ -91,3 +92,6 @@
 // Utility classes
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/_utilities";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/_responsive-utilities";
+
+// Bootswatch overrides
+@import "_bootswatch";
