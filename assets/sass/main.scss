@@ -1,8 +1,8 @@
 // Bootstrap
-@import "_bootstrap";
+@import "_bootstrap.scss";
 
-// SMC
-@import "_global";                   // Base styling & custom mixins
+// Roots
+@import "_global.scss";              // Base styling & custom mixins
 @import "components/_buttons";       // Button tweaks
 @import "components/_forms";         // Form tweaks
 @import "components/_media";         // WordPress media

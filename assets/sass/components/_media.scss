@@ -1,0 +1,15 @@
+// Captions
+.wp-caption {
+  @extend .thumbnail;
+}
+
+.wp-caption-text {
+  // Can't extend nested selector `.thumbnail .caption`, so copy it
+  padding: $thumbnail-caption-padding;
+  color: $thumbnail-caption-color;
+}
+
+// Gallery shortcode
+.gallery-row {
+  padding: ($line-height-computed / 2) 0;
+}
