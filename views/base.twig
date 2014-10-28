@@ -1,0 +1,38 @@
+{% include 'partials/head.twig' %}
+
+<body {{ body_class }}>
+
+  <!--[if lt IE 8]>
+    <div class="alert alert-warning">
+      {{ site.browse_happy }}
+    </div>
+  <![endif]-->
+
+  {{ function(do_action('get_header')) }}
+  {% include 'partials/header.twig' %}
+
+  <div class="wrap container" role="document">
+    <div class="content row">
+      <main class="main" role="main">
+
+        {% block content %}
+        {% endblock %}
+
+      </main><!-- /.main -->
+
+      {% if 'sidebar' %}
+      <aside class="sidebar" role="complementary">
+
+        {% block sidebar %}
+        {% endblock %}
+
+      </aside><!-- /.sidebar -->
+      {% endif %}
+
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+
+  {% include 'partials/footer.twig' %}
+
+</body>
+</html>

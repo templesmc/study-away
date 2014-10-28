@@ -10,9 +10,9 @@
  * @link https://github.com/roots/roots/pull/1042
  */
 $smc_includes = array(
+  'lib/vendor/timber.php',   // Timber templating framework
   'lib/utils.php',           // Utility functions
   'lib/init.php',            // Initial theme setup and constants
-  'lib/wrapper.php',         // Theme wrapper class
   'lib/sidebar.php',         // Sidebar class
   'lib/config.php',          // Configuration
   'lib/activation.php',      // Theme activation

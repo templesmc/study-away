@@ -1,4 +1,11 @@
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/page', 'header'); ?>
-  <?php get_template_part('templates/content', 'page'); ?>
-<?php endwhile; ?>
+<?php
+
+$context = Timber::get_context();
+$p = Timber::query_post();
+$context['item'] = get_post( $p->ID );
+
+$context['page_title'] = smc_title();
+
+$context['pagination'] = wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>'));
+
+Timber::render( 'page.twig', $context );
