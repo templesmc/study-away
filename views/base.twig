@@ -1,38 +1,47 @@
-{% include 'partials/head.twig' %}
+{% include 'html-header.twig' %}
+{% block head %}
+{% endblock %}
+</head>
+    <body class="{{body_class}}" data-source="base.twig">
+        <header class="header" >
+            {% block header %}
+            <div class="wrapper">
 
-<body {{ body_class }}>
+                <h1 class="hdr-logo" role="banner">
+                    <a class="hdr-logo-link" href="/" title="Timber" rel="home">{{bloginfo('name')}}</a>
+                </h1>
+                <nav id="access" class="main-navigation" role="navigation">
+                    <ul>
+                    {% for item in menu.items %}
+                        <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                            <a href="{{item.link}}">{{item.title}}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </nav><!-- #access -->
 
-  <!--[if lt IE 8]>
-    <div class="alert alert-warning">
-      {{ site.browse_happy }}
-    </div>
-  <![endif]-->
+            </div>
+            {% endblock %}
+        </header>
 
-  {{ get_header }}
-  {% include 'partials/header.twig' %}
 
-  <div class="wrap container" role="document">
-    <div class="content row">
-      <main class="main" role="main">
+        <section id="content" role="main" class="content-wrapper">
+            {% if title %}<h1>{{title}}</h1>{% endif %}
+            <div class="wrapper {{sidebar_class}}">
+                {% block content %}
+                    Sorry, no content
+                {% endblock %}
+            </div>
+            {% if sidebar %}
+                <aside class="layout-sidebar">
+                    {{sidebar}}
+                </aside>
+            {% endif %}
+        </section>
 
-        {% block content %}
-        {% endblock %}
-
-      </main><!-- /.main -->
-
-      {% if 'sidebar' %}
-      <aside class="sidebar" role="complementary">
-
-        {% block sidebar %}
-        {% endblock %}
-
-      </aside><!-- /.sidebar -->
-      {% endif %}
-
-    </div><!-- /.content -->
-  </div><!-- /.wrap -->
-
-  {% include 'partials/footer.twig' %}
-
-</body>
+        <footer id="footer">
+            {% include 'footer.twig' %}
+        </footer>
+        {{ function('wp_footer') }}
+    </body>
 </html>

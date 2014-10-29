@@ -1,21 +1,28 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<?php
+/**
+ * The main template file
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file
+ *
+ * Methods for TimberHelper can be found in the /functions sub-directory
+ *
+ * @package 	WordPress
+ * @subpackage 	Timber
+ * @since 		Timber 0.1
+ */
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'smc'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
+	if (!class_exists('Timber')){
+		echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
+	}
+	$context = Timber::get_context();
+	$context['posts'] = Timber::get_posts();
+	$context['foo'] = 'bar';
+	$templates = array('index.twig');
+	if (is_home()){
+		array_unshift($templates, 'home.twig');
+	}
+	Timber::render('index.twig', $context);
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_format()); ?>
-<?php endwhile; ?>
 
-<?php if ($wp_query->max_num_pages > 1) : ?>
-  <nav class="post-nav">
-    <ul class="pager">
-      <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'smc')); ?></li>
-      <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'smc')); ?></li>
-    </ul>
-  </nav>
-<?php endif; ?>
