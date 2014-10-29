@@ -23,5 +23,9 @@
 
 $context = Timber::get_context();
 $post = new TimberPost();
-$context['post'] = $post;
+$context['item'] = $post;
+
+$context['title'] = smc_title();
+$context['pagination'] = wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>'));
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
