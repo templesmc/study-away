@@ -10,18 +10,18 @@
  * @link https://github.com/roots/roots/pull/1042
  */
 $smc_includes = array(
-  'lib/vendor/timber.php',   // Timber templating framework
-  'lib/utils.php',           // Utility functions
-  'lib/init.php',            // Initial theme setup and constants
-  'lib/sidebar.php',         // Sidebar class
-  'lib/config.php',          // Configuration
-  'lib/activation.php',      // Theme activation
-  'lib/titles.php',          // Page titles
-  'lib/nav.php',             // Custom nav modifications
-  'lib/gallery.php',         // Custom [gallery] modifications
-  'lib/comments.php',        // Custom comments modifications
-  'lib/scripts.php',         // Scripts and stylesheets
-  'lib/extras.php',          // Custom functions
+  'lib/vendor/timber/timber.php',   // Timber templating framework
+  'lib/utils.php',                  // Utility functions
+  'lib/init.php',                   // Initial theme setup and constants
+  'lib/sidebar.php',                // Sidebar class
+  'lib/config.php',                 // Configuration
+  'lib/activation.php',             // Theme activation
+  'lib/titles.php',                 // Page titles
+  'lib/nav.php',                    // Custom nav modifications
+  'lib/gallery.php',                // Custom [gallery] modifications
+  'lib/comments.php',               // Custom comments modifications
+  'lib/scripts.php',                // Scripts and stylesheets
+  'lib/extras.php',                 // Custom functions
 );
 
 foreach ($smc_includes as $file) {
