@@ -1,5 +1,20 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+
+{% include 'partials/page/header.twig' %}
+
+<div class="alert alert-warning">
+  {{ msg.alert }}
+</div>
+
+<p>{{ msg.explain }}</p>
+<ul>
+  <li>{{ msg.reasons.0 }}</li>
+  <li>{{ msg.reasons.1 }}</li>
+</ul>
+
+<?php get_search_form(); ?>
+
+
 {% endblock %}
