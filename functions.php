@@ -5,7 +5,6 @@
    */
   if ( !class_exists('Timber') ) {
     require_once dirname( __FILE__ ) . '/lib/vendor/timber/timber.php';
-    require_once dirname( __FILE__ ) . '/lib/timber.php';
   }
 
   /**
@@ -19,6 +18,7 @@
    * @link https://github.com/roots/roots/pull/1042
    */
   $smc_includes = array(
+    'lib/timber.php',                 // Timber extensions
     'lib/utils.php',                  // Utility functions
     'lib/init.php',                   // Initial theme setup and constants
     'lib/sidebar.php',                // Sidebar class
