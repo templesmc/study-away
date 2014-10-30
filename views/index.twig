@@ -1,10 +1,27 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h2>{{foo}}</h2>
-	<p>{{qux}}</p>
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+
+{% include 'partials/page/header.twig' %}
+
+{% if items is empty %}
+  <div class="alert alert-warning">
+    {{ msg.not_found }}
+  </div>
+  {% include 'partials/search-form.twig' %}
+{% endif %}
+
+{% for item in items %}
+  {% include ['partials/tease-' ~ item.post_type ~ '.twig', 'partials/tease.twig'] %}
+{% endfor %}
+
+{% if pagination.display %}
+  <nav class="post-nav">
+    <ul class="pager">
+      <li class="previous">{{ pagination.prev }}</li>
+      <li class="next">{{ pagination.next }}</li>
+    </ul>
+  </nav>
+{% endif %}
 
 {% endblock %}
