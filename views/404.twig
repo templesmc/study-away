@@ -5,16 +5,15 @@
 {% include 'partials/page/header.twig' %}
 
 <div class="alert alert-warning">
-  {{ msg.alert }}
+  {{ msg.not_found.alert }}
 </div>
 
 <p>{{ msg.explain }}</p>
 <ul>
-  <li>{{ msg.reasons.0 }}</li>
-  <li>{{ msg.reasons.1 }}</li>
+  <li>{{ msg.not_found.reasons.0 }}</li>
+  <li>{{ msg.not_found.reasons.1 }}</li>
 </ul>
 
-<?php get_search_form(); ?>
-
+{% include 'partials/search-form.twig' %}
 
 {% endblock %}

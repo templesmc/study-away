@@ -6,7 +6,7 @@
 
 {% if items is empty %}
   <div class="alert alert-warning">
-    {{ msg.not_found }}
+    {{ msg.not_found.no_results }}
   </div>
   {% include 'partials/search-form.twig' %}
 {% endif %}

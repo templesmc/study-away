@@ -11,11 +11,16 @@ function smc_filter_timber_context ( $context ) {
   $context['last_modified']['time'] = get_the_modified_time('g:i a');
 
 
-  $context['msg'] = array();
-  $context['msg']['by']         = __('By', 'smc');
-  $context['msg']['search'] = __('Search', 'smc');
-  $context['msg']['search_for'] = __('Search for:', 'smc');
-  $context['msg']['not_found'] = __('Sorry, no results were found.', 'smc');
+  $context['msg']                            = array();
+  $context['msg']['not_found']               = array();
+  $context['msg']['by']                      = __('By', 'smc');
+  $context['msg']['search']                  = __('Search', 'smc');
+  $context['msg']['search_for']              = __('Search for:', 'smc');
+  $context['msg']['not_found']['no_results'] = __('Sorry, no results were found.', 'smc');
+  $context['msg']['not_found']['alert']      = __('Sorry, but the page you were trying to view does not exist.', 'smc');
+  $context['msg']['not_found']['explain']    = __('It looks like this was the result of either:', 'smc');
+  $context['msg']['not_found']['reasons'][]  = __('a mistyped address', 'smc');
+  $context['msg']['not_found']['reasons'][]  = __('an out-of-date link', 'smc');
 
   return $context;
 
